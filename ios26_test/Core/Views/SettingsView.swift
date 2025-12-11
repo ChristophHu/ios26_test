@@ -22,9 +22,6 @@ private extension SettingsView {
     var newSettingsView: some View {
         NavigationStack {
             List {
-                //NavigationLink("Theme", destination: ThemeView())
-                //NavigationLink("Icon", destination: IconView())
-                //NavigationLink("Accent Color", destination: AccentColorView())
                 Section {
                     NavigationLink {
                         ThemeView(themeMode: isDarkMode ? .constant("Dark") : .constant("Light"))
@@ -84,10 +81,6 @@ private extension SettingsView {
                 .tint(Color.appTheme.accent)
         }
     }
-
-    //var applicationBoxView: some View {
-    //    InfoBoxView(with: viewModel.applicationData)
-    //}
 }
 
 struct ThemeView: View {

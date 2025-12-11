@@ -8,7 +8,13 @@
 import SwiftUI
     
 struct WelcomeView: View {
+    /*
+     @StateObject creates and owns an ObservableObject instance for a SwiftUI view. The instance is initialized once for the view’s lifecycle and is kept across view re‑creations, making it the right choice when the view is responsible for creating the view model. Use @ObservedObject when the object is created elsewhere and injected into the view; use @EnvironmentObject for shared, environment‑provided objects.
+     */
     @StateObject private var viewModel = WelcomeViewModel()
+    /*
+     @Binding is a SwiftUI property wrapper that creates a two-way connection to a value owned elsewhere (usually a parent view). The child view using @Binding does not own the data; it can read and write it. Pass a binding by prefixing the parent @State property with $.
+     */
     @Binding var isShownWelcomeScreen: Bool
     
     var body: some View {
